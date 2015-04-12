@@ -21,11 +21,11 @@
         <form role="form" th:action="login" method="post">
             <md-input-container flex>
                 <label>Username:</label>
-                <input type="text" id="username" name="username"/>
+                <input type="text" id="username" name="username" autofocus/>
             </md-input-container>
             <md-input-container flex>
                 <label>Password:</label>
-                <input type="text" id="password" name="password"/>
+                <input type="password" id="password" name="password"/>
             </md-input-container>
             <input type="hidden" id="csrf_token" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <md-button class="md-raised md-primary" type="submit">Login</md-button>
