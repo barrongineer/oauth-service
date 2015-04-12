@@ -1,0 +1,13 @@
+form {
+    width: 90%;
+}
+
+.md-whiteframe-z1 {
+    margin-top: 100px;
+    padding: 50px;
+}
+
+#login-container {
+    max-width: 864px;
+    margin: auto;
+}

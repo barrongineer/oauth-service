@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>OAuth2 Login</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lib/angular-material.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login/login.css}">
+
+    <script th:src="@{/js/lib/angular.min.js}"></script>
+    <script th:src="@{/js/lib/angular-animate.min.js}"></script>
+    <script th:src="@{/js/lib/angular-aria.min.js}"></script>
+    <script th:src="@{/js/lib/angular-material.min.js}"></script>
+    <script th:src="@{/js/app.js}"></script>
+    <script th:src="@{/js/login/login.controller.js}"></script>
+</head>
+<body>
+
+<div id="login-container" layout="column" ng-controller="LoginController as login">
+    <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+        <form role="form" th:action="login" method="post">
+            <md-input-container flex>
+                <label>Username:</label>
+                <input type="text" id="username" name="username"/>
+            </md-input-container>
+            <md-input-container flex>
+                <label>Password:</label>
+                <input type="text" id="password" name="password"/>
+            </md-input-container>
+            <input type="hidden" id="csrf_token" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <md-button class="md-raised md-primary" type="submit">Login</md-button>
+        </form>
+    </md-whiteframe>
+</div>
+</body>
+</html>
