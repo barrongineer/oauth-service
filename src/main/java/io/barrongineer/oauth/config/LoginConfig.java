@@ -35,8 +35,8 @@ public class LoginConfig extends WebSecurityConfigurerAdapter {
         auth
                 .parentAuthenticationManager(authenticationManager)
                 .inMemoryAuthentication()
-                .withUser("user")
-                .password("password")
-                .roles("USER");
+                .withUser("user").password("password").roles("USER")
+                .and()
+                .withUser("admin").password("password").roles("USER", "ADMIN");
     }
 }
